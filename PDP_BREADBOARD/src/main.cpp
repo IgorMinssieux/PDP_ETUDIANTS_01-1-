@@ -61,10 +61,6 @@ void setup() {
   Serial.println(F("------------------------------------"));
   // Set delay between sensor readings based on sensor details.
   delayMS = sensor.min_delay / 1000;
-}
-
-void loop() {
-  // Delay between measurements.
 
   // Get temperature event and print its value.
   sensors_event_t event;
@@ -87,6 +83,12 @@ void loop() {
     Serial.print(event.relative_humidity);
     Serial.println(F("%"));
   }
+  delay(100);
   ESP.deepSleep(5e6);
- 
+}
+
+void loop() {
+
+
+
 }
